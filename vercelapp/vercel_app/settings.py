@@ -78,14 +78,8 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
 DATABASES = {
     'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "verceldb",       # Database name
-        "USER": "default",       # Database user
-        "PASSWORD": "59DfTnvFrSJI",  # Database password
-        "HOST": "ep-floral-snowflake-98889676-pooler.us-east-1.postgres.vercel-storage.com",          # Database host (default: 'localhost')
-        "PORT": "5432",               # Database port (default: '5432')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
