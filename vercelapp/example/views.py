@@ -1,5 +1,6 @@
 # example/views.py
 from datetime import datetime
+from django.shortcuts import render
 
 from django.http import HttpResponse
 
@@ -14,3 +15,6 @@ def index(request):
     </html>
     '''
     return HttpResponse(html)
+
+def home(request):
+    return render(request, "portal/home.html")
