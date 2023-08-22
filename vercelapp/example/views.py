@@ -17,4 +17,4 @@ def index(request):
     return HttpResponse(html)
 
 def home(request):
-    return render(request, "portal/home.html")
+    return render(request, "example/home.html")
