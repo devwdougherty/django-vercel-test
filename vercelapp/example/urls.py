@@ -5,5 +5,5 @@ from example.views import index
 
 
 urlpatterns = [
-    path('', "portal/home.html"),
+    path('', "example/home.html"),
 ]
