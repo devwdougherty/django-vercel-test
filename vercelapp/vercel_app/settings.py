@@ -76,7 +76,27 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+        "ENGINE": "django.db.backends.postgresql",
+        '''
+        POSTGRES_URL="postgres://default:59DfTnvFrSJI@ep-floral-snowflake-98889676-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+        POSTGRES_PRISMA_URL="postgres://default:59DfTnvFrSJI@ep-floral-snowflake-98889676-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"
+        POSTGRES_URL_NON_POOLING="postgres://default:59DfTnvFrSJI@ep-floral-snowflake-98889676.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+        POSTGRES_USER="default"
+        POSTGRES_HOST="ep-floral-snowflake-98889676-pooler.us-east-1.postgres.vercel-storage.com"
+        POSTGRES_PASSWORD="59DfTnvFrSJI"
+        POSTGRES_DATABASE="verceldb"
+        '''
+        "NAME": "verceldb",       # Database name
+        "USER": "default",       # Database user
+        "PASSWORD": "59DfTnvFrSJI",  # Database password
+        "HOST": "ep-floral-snowflake-98889676-pooler.us-east-1.postgres.vercel-storage.com",          # Database host (default: 'localhost')
+        "PORT": "5432",               # Database port (default: '5432')
+    }
+}
 
 
 # Password validation
